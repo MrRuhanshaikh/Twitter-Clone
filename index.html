@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Clone</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-black text-white ">
+    <div class="container flex mx-auto sm:w-4/5 mt-1">
+      <div class="left hidden md:block w-[5vw] xl:w-1/2 ">
+        <div class="sidebar scroll-smooth sticky top-4">
+          <ul class="flex flex-col gap-5 text-xl">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+              </g>
+            </svg>
+            
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913H9.14c.51 0 .929-.41.929-.913v-7.075h3.909v7.075c0 .502.417.913.928.913h6.165c.511 0 .929-.41.929-.913V7.904c0-.301-.158-.584-.408-.758z"></path></g></svg>
+              <span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Home</span>
+            </li>
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z"></path></g></svg>
+              <span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Explore</span>
+            </li>
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M19.993 9.042C19.48 5.017 16.054 2 11.996 2s-7.49 3.021-7.999 7.051L2.866 18H7.1c.463 2.282 2.481 4 4.9 4s4.437-1.718 4.9-4h4.236l-1.143-8.958zM12 20c-1.306 0-2.417-.835-2.829-2h5.658c-.412 1.165-1.523 2-2.829 2zm-6.866-4l.847-6.698C6.364 6.272 8.941 4 11.996 4s5.627 2.268 6.013 5.295L18.864 16H5.134z"></path></g></svg><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Notification</span>
+            </li>
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v2.764l8 3.638 8-3.636V5.5c0-.276-.224-.5-.5-.5h-15zm15.5 5.463l-8 3.636-8-3.638V18.5c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-8.037z"></path></g></svg><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Messages</span>
+            </li>
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><g clip-path="url(#3-clip0_2592_269)" clip-rule="evenodd"><path d="M18 4.1H6c-1.05 0-1.9.85-1.9 1.9v12c0 1.05.85 1.9 1.9 1.9h12c1.05 0 1.9-.85 1.9-1.9V6c0-1.05-.85-1.9-1.9-1.9zM6 2h12c2.21 0 4 1.79 4 4v12c0 2.21-1.79 4-4 4H6c-2.21 0-4-1.79-4-4V6c0-2.21 1.79-4 4-4z"></path><path d="M6.68 17.8l8.108-11.58h2.532L9.21 17.8H6.68z"></path></g><defs><clipPath id="3-clip0_2592_269"><rect height="20" rx="1" width="20" x="2" y="2"></rect></clipPath></defs></g></svg><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Grok</span>
+            </li>
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500" data-testid="icon"><g><path d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z"></path></g></svg><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Bookmarks</span>
+            </li>
+            <li class="flex gap-x-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M7.501 19.917L7.471 21H.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977.963 0 1.95.212 2.87.672-.444.478-.851 1.03-1.212 1.656-.507-.204-1.054-.329-1.658-.329-2.767 0-4.57 2.223-4.938 6.004H7.56c-.023.302-.05.599-.059.917zm15.998.056L23.528 21H9.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977s6.816 2.358 7 8.977zM21.437 19c-.367-3.781-2.17-6.004-4.938-6.004s-4.57 2.223-4.938 6.004h9.875zm-4.938-9c-.799 0-1.527-.279-2.116-.73-.836-.64-1.384-1.638-1.384-2.77 0-1.93 1.567-3.5 3.5-3.5s3.5 1.57 3.5 3.5c0 1.132-.548 2.13-1.384 2.77-.589.451-1.317.73-2.116.73zm-1.5-3.5c0 .827.673 1.5 1.5 1.5s1.5-.673 1.5-1.5-.673-1.5-1.5-1.5-1.5.673-1.5 1.5zM7.5 3C9.433 3 11 4.57 11 6.5S9.433 10 7.5 10 4 8.43 4 6.5 5.567 3 7.5 3zm0 2C6.673 5 6 5.673 6 6.5S6.673 8 7.5 8 9 7.327 9 6.5 8.327 5 7.5 5z"></path></g></svg><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Communities</span>
+            </li>
+            <li class=" hidden xl:flex gap-x-5">
+              <span
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg></span><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Premium</span>
+            </li>
+            <li class="flex gap-x-5">
+              <span
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M5.651 19h12.698c-.337-1.8-1.023-3.21-1.945-4.19C15.318 13.65 13.838 13 12 13s-3.317.65-4.404 1.81c-.922.98-1.608 2.39-1.945 4.19zm.486-5.56C7.627 11.85 9.648 11 12 11s4.373.85 5.863 2.44c1.477 1.58 2.366 3.8 2.632 6.46l.11 1.1H3.395l.11-1.1c.266-2.66 1.155-4.88 2.632-6.46zM12 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM8 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4z"></path></g></svg></span><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">Profile</span>
+            </li>
+            <li class="flex gap-x-5">
+              <span
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="w-7 fill-current text-white transition duration-300 ease-in-out hover:text-sky-500"><g><path d="M3.75 12c0-4.56 3.69-8.25 8.25-8.25s8.25 3.69 8.25 8.25-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12zM12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm-4.75 11.5c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25S6 11.31 6 12s.56 1.25 1.25 1.25zm9.5 0c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25-1.25.56-1.25 1.25.56 1.25 1.25 1.25zM13.25 12c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25.56-1.25 1.25-1.25 1.25.56 1.25 1.25z"></path></g></svg></span><span class="hidden transition duration-300 ease-in-out border-b border-transparent hover:border-sky-500 xl:block">More</span>
+            </li>
+            <li class="flex gap-x-5 ">
+              <span class=" xl:hidden rounded-full p-1 bg-sky-500 transition duration-300 ease-in-out hover:bg-sky-700"
+                ><img
+                  class="w-7"
+                  src="/svg/post.svg"
+                  alt="more-icon" /></span
+              >
+              <span class=" hidden xl:block rounded-full w-[65%] text-center bg-sky-500 transition duration-300 ease-in-out hover:bg-sky-700 p-2"
+              >Post</span
+            >
+            </li>
+          </ul>
+          <div class="user mt-8 flex gap-x-2 items-center">
+            <div class="img">
+              <img class="rounded-full w-10 " src="img/user.jpg" alt="user-dp" />
+            </div>
+            <div class="flex"></div>
+            <div class="text hidden xl:block">
+              <div class="flex">
+              <div class="font-bold text-ellipsis overflow-hidden">
+                Ruhan Shaikh
+              </div>
+              <div><img class="w-4" src="/svg/tick.svg" alt="tick"></div>
+              </div>
+              <div class="text-gray-500">@Ruhan__Shaikh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center relative border-x border-x-zinc-700 w-full">
+        <div class="formobile p-3 flex items-center justify-between md:hidden relative">
+          <img class="w-10 rounded-full" src="img/user.jpg" alt="user">
+          <img class="invert absolute left-1/2 transform -translate-x-1/2 w-7" src="./svg/logo.svg" alt="logo">
+          <div class="text-sky-500 font-bold">Get Premium</div>
+      </div>
+        <div class="flex items-center mb-5 h-10 scroll-smooth md:sticky top-0 bg-black opacity-75 ">
+          <div class="w-1/2 text-center font-bold">For you</div>
+          <div class="w-1/2 text-center font-bold">Following</div>
+        </div>
+        <div class=" hidden md:block border border-zinc-700 ">
+          <div class="flex h-14 items-center gap-5">
+            <img class="rounded-full ml-2 w-10 " src="/img/user.jpg" alt="user">
+            <input class="bg-black text-zinc-500 text-xl outline-none " type="text" placeholder="What is happening ?!">
+          </div>
+          <div class="w-4/5 mx-auto flex-col gap-y-4">
+            <div class="flex gap-2">
+            <img class="w-6" src="/svg/globe.svg" alt="globe">
+            <p class=" my-2 text-sky-500">Everyone can reply</p>
+            </div>
+            <div class="flex  border-t border-zinc-500 justify-between">
+            <div class="post_icons flex gap-4 ">
+              <img class="w-6" src="svg/img.svg" alt="select_img">
+              <img class="w-6" src="svg/gif.svg" alt="select_gif">
+              <img class="w-6" src="svg/insert.svg" alt="insert_icon">
+              <img class="w-6" src="svg/smile.svg" alt="emojies">
+              <img class="w-6" src="svg/date&time.svg" alt="select_date&time">
+              <img class="w-6" src="svg/map.svg" alt="map_icon">
+              </div>
+              <button class="bg-sky-500 rounded-full my-2 px-6 py-2 transition duration-300 ease-in-out hover:bg-sky-700">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="tweet flex gap-1 p-2 border-y md:border-b border-zinc-500">
+          <div class="image w-[8%]">
+            <img class="w-10 rounded-full" src="img/user_2.jpg" alt="elonmusk">
+          </div>
+          <div class="content  w-5/6">
+            <span class="font-bold">Elon Musk</span><span class="text-gray-500">@elonmusk · 11h</span>
+            <div>We will proceed with the smaller number of concurrent listeners at 8:30 ET and then post the unedited audio immediately thereafter</div>
+            <div class="box m-2 p-2 rounded-lg border border-zinc-500">
+                <div class="inside-img flex items-center gap-1">
+                <img class="w-8 rounded-full" src="img/user_2.jpg" alt="elonmusk">
+                <span class="font-bold">Elon Musk</span> <span class="text-gray-500">@elonmusk · 11h</span>
+                </div>
+                <div class="inside-content">
+                <div>We tested the system with 8 million concurrent listeners earlier today x.com/elonmusk/statu…</div>
+               </div>
+            </div>
+            <div class="flex justify-between">
+              <div class="post-icons m-2 flex gap-1 sm:gap-5">
+                <img class="invert w-5" src="/svg/chat.svg" alt="chat"><span class="text-customGray">12k</span>
+                <img class="invert w-5" src="/svg/repost.svg" alt="repost.svg"><span class="text-customGray">18k</span>
+                <img class="invert w-5" src="/svg/likes.svg" alt="likes.svg"><span class="text-customGray">131k</span>
+                <img class="invert w-5" src="/svg/impression.svg" alt="impression.svg"><span class="text-customGray">20M</span>
+            </div>
+              <div class="flex gap-1 sm:gap-5">
+                <img class="invert w-5" src="/svg/save.svg" alt="save">
+                <img class="invert w-5" src="/svg/share.svg" alt="share.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tweet-2 flex gap-1 p-2 border-b border-zinc-500">
+          <div class="image  w-[8%]">
+            <img class="w-10 rounded-full" src="img/user_3.jpg" alt="BCCI">
+          </div>
+          <div class="content  w-5/6">
+            <span class="font-bold">BCCI</span> <span class="text-gray-500">@BCCI · June29</span>
+                <div>𝗖.𝗛.𝗔.𝗠.𝗣.𝗜.𝗢.𝗡.𝗦 🏆 </div>
+                <div class="text-sky-500"><a href="https://x.com/hashtag/TeamIndia?src=hashtag_click" targer="_blank">#TeamIndia</a> HAVE DONE IT! 🔝👏 </div>
+                <div>ICC Men's T20 World Cup 2024 Champions 😍</div>
+                <div class="text-sky-500"><a href="https://x.com/hashtag/T20WorldCup?src=hashtag_click" targer="_blank">#T20WorldCup</a> | <a href="https://x.com/hashtag/SAvIND?src=hashtag_click" targer="_blank">#SAvIND</a></div>
+            <div class="box p-2  m-2 rounded-lg border border-zinc-500">
+                <div class="inside-img flex items-center gap-1 ">
+                <img class="w-8 rounded-full" src="img/user_3.jpg" alt="BCCI">
+                <span class="font-bold">BCCI</span> <span class="text-gray-500">@BCCI · June29</span>
+                </div>
+                <div class="inside-content">
+                <div><img src="/img/india.jpeg" alt="Team-India"></div>
+               </div>
+            </div>
+            <div class="flex justify-between">
+              <div class="post-icons m-2 flex gap:1 sm:gap-5">
+                <img class="invert w-5" src="/svg/chat.svg" alt="chat"><span class="text-customGray">3.9k</span>
+                <img class="invert w-5" src="/svg/repost.svg" alt="repost.svg"><span class="text-customGray">48k</span>
+                <img class="invert w-5" src="/svg/likes.svg" alt="likes.svg"><span class="text-customGray">192k</span>
+                <img class="invert w-5" src="/svg/impression.svg" alt="impression.svg"><span class="text-customGray">6M</span>
+            </div>
+              <div class="flex gap:1 sm:gap-5">
+                <img class="invert w-5" src="/svg/save.svg" alt="save">
+                <img class="invert w-5" src="/svg/share.svg" alt="share.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tweet-3 flex gap-1 p-2 border-b border-zinc-500">
+          <div class="image   w-[8%]">
+            <img class="w-10 rounded-full" src="img/user_4.jpg" alt="AnimeTV チェーン">
+          </div>
+          <div class="content  w-5/6">
+            <span class="font-bold">AnimeTV チェーン</span> <span class="text-gray-500">@animetv_jp · Aug10</span>
+            <div>Rurouni Kenshin Season 2 "Kyoto Disturbance" is scheduled for October 2024! </div>
+            <div>Two cours back-to-back.</div>
+            <div class="text-sky-500"><a href="https://t.co/kZLOZ7HNo6" target="_blank">✨More: https://animetv-jp.net/news/</a></div>
+            <div class="box p-2  m-2 rounded-lg border border-zinc-500">
+                <div class="inside-img gap-1 flex items-center">
+                <img class="w-8 rounded-full" src="img/user_4.jpg" alt="AnimeTV チェーン">
+                <span class="font-bold">AnimeTV チェーン</span> <span class="text-gray-500">@animetv_jp · Aug10</span>
+                </div>
+                <div class="inside-content object-contain overflow-x-hidden">
+                <div class="hidden sm:block"><iframe width="448" height="315" src="https://www.youtube.com/embed/Xw9-jJZzZrE?si=xNlI23bbtuY935aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+               </div>
+               <div class="sm:hidden"><img src="/img/tweet-3.jpg" alt="Rurouni Kenshin "></div>
+            </div>
+            <div class="flex justify-between">
+              <div class="post-icons m-2 flex gap-1 sm:gap-5">
+                <img class="invert w-5" src="/svg/chat.svg" alt="chat"><span class="text-customGray">8k</span>
+                <img class="invert w-5" src="/svg/repost.svg" alt="repost.svg"><span class="text-customGray">15k</span>
+                <img class="invert w-5" src="/svg/likes.svg" alt="likes.svg"><span class="text-customGray">100k</span>
+                <img class="invert w-5" src="/svg/impression.svg" alt="impression.svg"><span class="text-customGray">10M</span>
+            </div>
+              <div class="flex gap:1 sm:gap-5">
+                <img class="invert w-5" src="/svg/save.svg" alt="save">
+                <img class="invert w-5" src="/svg/share.svg" alt="share.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu flex sticky bg-black opacity-75 bottom-0 justify-evenly w-full h-14 md:hidden">
+          <img class="invert w-7" src="/svg/home.svg" alt="home">
+          <img class="invert w-7" src="/svg/Explore.svg" alt="explore">
+          <img class="invert w-7" src="/svg/Grok.svg" alt="grok">
+          <img class="invert w-7" src="/svg/Notification.svg" alt="notification">
+          <img class="invert w-7" src="/svg/Message.svg" alt="message">
+          <img class="invert w-7" src="svg/community.svg" alt="community">
+        </div>
+      </div>
+      <div class="right hidden lg:block w-1/2 ml-7 flex flex-col gap-y-5 ">
+        <div class="search scroll-smooth sticky top-1 z-10  bg-black ">
+          <input
+            class=" w-full rounded-full px-4 py-2 bg-zinc-800 text-white"
+            type="search"
+            placeholder="search"
+          />
+        </div>
+        <div class="wrap scroll-smooth sticky space-y-5 top-[8vh]">
+        <div
+          class="follow  border flex flex-col gap-5 border-zinc-700  p-4 w-full rounded-lg"
+        >
+          <h1 class="text-xl  font-bold">Subscribe to Premium</h1>
+          <p class="text-sm">
+            Subscribe to unlock new features and if eligible, receive a share of
+            ads revenue.
+          </p>
+          <button class="bg-sky-500 py-2 w-1/2 px-6 rounded-full transition duration-300 ease-in-out hover:bg-sky-700">Subscribe</button>
+        </div>
+        <div class="happening  border  flex flex-col gap-5 border-zinc-700  p-5 w-full rounded-lg">
+            <h1 class="text-xl font-bold">What’s happening</h1>
+              <div>
+                <div class=" text-gray-500 text-sm">Business & finance · Trending</div>
+                <div class="font-bold">#HindenbergReport</div>
+                <div class=" text-gray-500 text-sm">94.7K posts</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-sm">Politics · Trending</div>
+                <div class="font-bold">#IndiaElection2024</div>
+                <div class="text-gray-500 text-sm">120K posts</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-sm">Entertainment · Trending</div>
+                <div class="font-bold">#KanguvaTrailer</div>
+                <div class="text-gray-500 text-sm">62K posts</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-sm">Sports · Trending</div>
+                <div class="font-bold">#IndvsPak</div>
+                <div class="text-gray-500 text-sm">180K posts</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-sm">Technology · Trending</div>
+                <div class="font-bold">#AIRevolution</div>
+                <div class="text-gray-500 text-sm">95.3K posts</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-sm">Health · Trending</div>
+                <div class="font-bold">#MentalHealthMatters</div>
+                <div class="text-gray-500 text-sm">110K posts</div>
+              </div>
+        </div>
+        <div class="follow  border  flex flex-col gap-5 border-zinc-700  p-5 w-full rounded-lg">
+          <h1 class="text-xl font-bold">Who to follow</h1>
+          <div class="user_2 flex gap-x-2 items-center">
+            <div class="img">
+              <img class="rounded-full w-10" src="img/user_2.jpg" alt="user_2-dp" />
+            </div>
+            <div class="text">
+              <div class="flex">
+                <div class="font-bold text-ellipsis overflow-hidden">
+                  Elon Musk 
+                </div>
+                <div><img class="w-4" src="/svg/tick.svg" alt="tick"></div>
+              </div>
+               <div class="text-gray-500">@elonmusk</div>
+            </div>
+          </div>
+          <div class="user_3 flex gap-x-2 items-center">
+            <div class="img">
+              <img class="rounded-full w-10" src="img/user_3.jpg" alt="user_3-dp" />
+            </div>
+            <div class="text">
+              <div class="flex">
+                <div class="font-bold text-ellipsis overflow-hidden">
+                  BCCI
+                </div>
+                <div><img class="w-4" src="/svg/tick.svg" alt="tick"></div>
+              </div>
+              <div class="text-gray-500">@BCCI</div>
+            </div>
+          </div>
+          <div class="user_4 flex gap-x-2 items-center">
+            <div class="img">
+              <img class="rounded-full w-10" src="img/user_4.jpg" alt="user_4-dp" />
+            </div>
+            <div class="text">
+              <div  class="flex"><div class="font-bold text-ellipsis overflow-hidden">
+                AnimeTV チェーン
+              </div>
+              <div><img class="w-4" src="/svg/tick.svg" alt="tick"></div></div>
+              <div class="w-10 text-gray-500">@animetv_jp</div>
+            </div>
+          </div>
+        </div>
+        <div class="fotter text-[14px] p-5 pt-0 w-full rounded-lg">
+            <a class="text-gray-500 " href="https://x.com/tos" target="_blank" >Terms of Service</a>
+            <a class="text-gray-500" href="https://x.com/privacy" target="_blank" >Privacy Policy</a>
+            <a class="text-gray-500" href="https://support.x.com/articles/20170514" >Cookie Policy</a>
+            <a class="text-gray-500" href="https://help.x.com/resources/accessibility" >Accessibility</a>
+            <a class="text-gray-500" href="https://business.x.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo" >Ads info</a>
+            <div class="text-gray-500">© 2024 X Corp.</div> 
+        </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </body>
+</html>
